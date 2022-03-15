@@ -3,7 +3,6 @@ from ostos import Ostos
 
 class Ostoskori:
     def __init__(self):
-        self.__summa_hinta = 0
         self.__ostos_lista = []
 
     def tavaroita_korissa(self):
@@ -17,7 +16,10 @@ class Ostoskori:
         return total
 
     def hinta(self):
-        return self.__summa_hinta
+        hinta = 0
+        for ostos in self.__ostos_lista:
+            hinta += ostos.hinta()
+        return hinta
         # kertoo korissa olevien ostosten yhteenlasketun hinnan
 
     def lisaa_tuote(self,  lisattava: Tuote):

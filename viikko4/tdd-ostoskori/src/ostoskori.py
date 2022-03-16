@@ -37,8 +37,8 @@ class Ostoskori:
                 return
 
     def tyhjenna(self):
-        pass
-        # tyhjentää ostoskorin
+        if len(self.__ostos_lista) > 0:
+            self.__ostos_lista.clear()
 
     def ostokset(self):
         # palauttaa listan jossa on korissa olevat ostos-oliot
